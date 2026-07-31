@@ -145,10 +145,25 @@
     }
     .item h3{margin:0 0 6px}
     .item .sub{color:var(--muted); font-size:.95rem; margin-bottom:8px}
+    .section-stack{display:grid; gap:16px}
+    .section-title{margin:0 0 10px; font-size:1rem; text-transform:uppercase; letter-spacing:.12em; color:#cbd9f1}
+    .bullet-list{margin:0; padding-left:18px; color:var(--muted); display:grid; gap:8px}
+    .bullet-list li{margin:0}
+    .contact-links{display:grid; gap:10px}
+    .contact-links a{display:block; color:#dbe7fb}
+    .contact-links a:hover{color:#fff}
     .contact{
       display:grid; grid-template-columns:1fr 1fr; gap:16px
     }
+    .resume-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+    }
     .card{padding:20px}
+    .link-list{display:grid; gap:10px; margin-top:10px}
+    .link-list a{color:#dbe7fb}
+    .link-list a:hover{color:#fff}
     footer{
       color:var(--muted);
       text-align:center;
@@ -159,7 +174,7 @@
     @keyframes rise{to{opacity:1; transform:none}}
 
     @media (max-width: 920px){
-      .hero, .grid, .contact{grid-template-columns:1fr}
+      .hero, .grid, .contact, .resume-grid{grid-template-columns:1fr}
       .nav{border-radius:22px}
       .stats{grid-template-columns:1fr 1fr 1fr}
     }
@@ -182,6 +197,7 @@
       </a>
       <nav class="navlinks">
         <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -196,6 +212,7 @@
             <p class="lead">Over the past two years, I have built scalable automation solutions for enterprise applications, including Sauce Labs integration, Playwright with Python, Dockerized execution, Sentinel Grid monitoring, and GenAI-enabled workflow automation.</p>
             <div class="cta">
               <a class="btn primary" href="#projects">See my work</a>
+              <a class="btn ghost" href="#resume">View resume</a>
               <a class="btn ghost" href="#contact">Get in touch</a>
             </div>
           </div>
@@ -273,22 +290,138 @@
         </div>
       </section>
 
+      <section id="resume" class="reveal" style="transition-delay:.24s">
+        <h2>Resume</h2>
+        <div class="resume-grid">
+          <div class="section-stack">
+            <div class="panel card">
+              <div class="section-title">Experience</div>
+              <div class="timeline">
+                <article class="item panel" style="background:rgba(255,255,255,.03)">
+                  <h3>VISA | SDET-SW Senior Test Engineer - CyberSecurity</h3>
+                  <div class="sub">Jun 2024 - Present | Bangalore, India</div>
+                  <div class="sub">Project: B2BIAMLOGIN [Identity and Access Management]</div>
+                  <ul class="bullet-list">
+                    <li>Built a scalable Playwright-Python automation framework from scratch with POM architecture, reusable components, and reporting.</li>
+                    <li>Leveraged Docker and Sentinel Grid to create consistent execution environments, centralized monitoring, automated alerting, and faster failure analysis.</li>
+                    <li>Used Generative AI and MCP servers to automate test case generation from Jira stories, reducing manual test design effort.</li>
+                    <li>Supported IAM and Cybersecurity initiatives covering secure access provisioning, compliance validation, audit readiness, and governance processes.</li>
+                    <li>Presented AI-driven automation solutions, framework enhancements, and POCs to stakeholders and leadership teams.</li>
+                  </ul>
+                </article>
+
+                <article class="item panel" style="background:rgba(255,255,255,.03)">
+                  <h3>PAYTM | SDET-2</h3>
+                  <div class="sub">Jan 2022 - May 2024 | Bangalore, India</div>
+                  <div class="sub">Project: Affordability Service</div>
+                  <ul class="bullet-list">
+                    <li>Implemented an API automation framework to improve efficiency and quality across service testing.</li>
+                    <li>Led end-to-end testing for payment transaction services, ensuring compliance with industry and regulatory requirements.</li>
+                    <li>Developed and maintained automated test scripts using Java and Rest Assured, reducing testing time by 40%.</li>
+                    <li>Collaborated with software engineers, product managers, and QA teams to identify issues early in the development lifecycle.</li>
+                    <li>Conducted data warehouse testing and analyzed logs through Kibana.</li>
+                  </ul>
+                </article>
+
+                <article class="item panel" style="background:rgba(255,255,255,.03)">
+                  <h3>MINDTREE | Senior Software Engineer</h3>
+                  <div class="sub">Oct 2018 - Dec 2021 | Bangalore, India</div>
+                  <div class="sub">Client: A real estate franchise group</div>
+                  <ul class="bullet-list">
+                    <li>Worked with Java, Selenium, Katalon Studio, Postman, and Rest Assured on web and API automation.</li>
+                    <li>Designed automation frameworks for testing web applications and maintaining APIs in a Drupal portal.</li>
+                    <li>Owned multiple modules and supported team members with framework understanding and delivery support.</li>
+                    <li>Acted as a point of contact for API and UI automation when required by the team.</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-stack">
+            <article class="item panel">
+              <h3>Technical Skills</h3>
+              <div class="sub">Proficient with</div>
+              <div class="tags">
+                <span class="tag">Java</span>
+                <span class="tag">Rest Assured</span>
+                <span class="tag">Playwright with Python</span>
+                <span class="tag">Selenium</span>
+                <span class="tag">TestNG</span>
+                <span class="tag">Jenkins</span>
+                <span class="tag">Docker</span>
+                <span class="tag">JIRA</span>
+                <span class="tag">Git</span>
+                <span class="tag">MCP Servers</span>
+                <span class="tag">Generative AI</span>
+                <span class="tag">AI Test Automation</span>
+                <span class="tag">Prompt Engineering</span>
+              </div>
+              <div class="sub" style="margin-top:16px">Familiar with</div>
+              <div class="tags">
+                <span class="tag">Sentinel Grid</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Selenium BDD</span>
+                <span class="tag">TestRail</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Kibana</span>
+                <span class="tag">Splunk</span>
+              </div>
+            </article>
+
+            <article class="item panel">
+              <h3>Education</h3>
+              <div class="timeline" style="margin-top:10px">
+                <div>
+                  <div style="font-weight:700">GIT, Belagavi</div>
+                  <div class="sub">B.Tech in Information Science Engineering | 2014-2018 | DGPA: 7.5/10</div>
+                </div>
+                <div>
+                  <div style="font-weight:700">GPU, Kumta</div>
+                  <div class="sub">Senior Secondary with PCMB | Score: 92.0/100</div>
+                </div>
+                <div>
+                  <div style="font-weight:700">BGS Highschool, Kumta</div>
+                  <div class="sub">Secondary School | CGPA: 92/100</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="item panel">
+              <h3>Additional Links</h3>
+              <div class="contact-links">
+                <a href="https://veronicagonsalves.in" target="_blank" rel="noopener">veronicagonsalves.in</a>
+                <a href="mailto:veronicagonsalves96@gmail.com">veronicagonsalves96@gmail.com</a>
+                <a href="https://github.com/VeronicaGonsalves96" target="_blank" rel="noopener">Github:// veronicagithub</a>
+                <a href="https://www.linkedin.com/in/veronica-gonsalves-742a251ba/" target="_blank" rel="noopener">LinkedIn:// veronicaGonsalves</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="reveal" style="transition-delay:.26s">
         <h2>Contact</h2>
         <div class="contact">
           <div class="card panel">
-            <h3>Let’s connect</h3>
-            <p style="color:var(--muted);margin-top:8px">
-              I’m always happy to discuss automation, framework design, quality engineering, and AI-driven workflow solutions.
-            </p>
+            <h3>Veronica Gonsalves</h3>
+            <p style="color:var(--muted);margin-top:8px">veronicagonsalves.in | +91 9632524684 | veronicagonsalves96@gmail.com</p>
+            <div class="cta" style="margin-top:18px">
+              <a class="btn primary" href="mailto:veronicagonsalves96@gmail.com">Email me</a>
+              <a class="btn ghost" href="https://www.linkedin.com/in/veronica-gonsalves-742a251ba/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
           </div>
 
           <aside class="card panel" style="min-height:160px">
-            <h3>Where to find me</h3>
-            <div style="color:var(--muted);margin-top:8px">
+            <h3>Quick contact</h3>
+            <div style="color:var(--muted);margin-top:8px;display:grid;gap:10px">
+              <div>Mobile: +91 9632524684</div>
               <div>Email: veronicagonsalves96@gmail.com</div>
-              <div style="margin-top:8px">GitHub: github.com/VeronicaGonsalves96</div>
-              <div style="margin-top:8px">LinkedIn:https://www.linkedin.com/in/veronica-gonsalves-742a251ba/</div>
+              <div>GitHub: github.com/VeronicaGonsalves96</div>
+              <div>LinkedIn: linkedin.com/in/veronica-gonsalves-742a251ba</div>
             </div>
           </aside>
         </div>
