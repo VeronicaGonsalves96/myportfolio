@@ -104,8 +104,15 @@
     .avatar{
       width:84px;height:84px;border-radius:22px;
       background:linear-gradient(135deg, rgba(124,58,237,.9), rgba(6,182,212,.8));
-      display:grid;place-items:center; font-size:1.7rem; font-weight:900;
+      overflow:hidden;
+      display:grid;place-items:center;
       margin-bottom:16px;
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
     .meta{color:var(--muted)}
     .stats{
@@ -192,7 +199,7 @@
         <div class="logo" aria-hidden>VG</div>
         <div>
           <div style="font-weight:800">Veronica Gonsalves</div>
-          <div style="font-size:0.85rem;color:var(--muted)">SDET at Visa • Test Automation • Framework Development</div>
+          <div style="font-size:0.85rem;color:var(--muted)">Automation Engineer • 7+ Years • AI-driven Automation</div>
         </div>
       </a>
       <nav class="navlinks">
@@ -207,9 +214,9 @@
       <section class="hero">
         <div class="hero-left">
           <div class="reveal" style="transition-delay:.05s">
-            <div class="eyebrow"><span class="dot"></span> Available for impactful quality engineering work</div>
-            <h1>Hi, I'm Veronica — an SDET at Visa focused on automation, frameworks, and quality engineering.</h1>
-            <p class="lead">Over the past two years, I have built scalable automation solutions for enterprise applications, including Sauce Labs integration, Playwright with Python, Dockerized execution, Sentinel Grid monitoring, and GenAI-enabled workflow automation.</p>
+            <div class="eyebrow"><span class="dot"></span> Automation Engineer with AI-driven solutions</div>
+            <h1>Hi, I'm Veronica — an Automation Engineer with 7 years of experience, focused on AI-driven automation and scalable frameworks.</h1>
+            <p class="lead">I build modern automation solutions for enterprise applications, including Sauce Labs integration, Playwright with Python, Dockerized execution, Sentinel Grid monitoring, and GenAI-enabled workflow automation.</p>
             <div class="cta">
               <a class="btn primary" href="#projects">See my work</a>
               <a class="btn ghost" href="#resume">View resume</a>
@@ -219,7 +226,9 @@
         </div>
 
         <aside class="panel hero-card reveal" style="transition-delay:.12s">
-          <div class="avatar">VG</div>
+          <div class="avatar">
+            <img src="profile.jpg" alt="Veronica Gonsalves profile photo" />
+          </div>
           <div>
             <h3>Veronica Gonsalves</h3>
             <div class="meta">SDET • Visa • Playwright • Selenium • Docker • GenAI</div>
@@ -227,16 +236,16 @@
 
           <div class="stats">
             <div class="stat">
-              <strong>2+</strong>
-              <span class="meta">Years focused on quality engineering</span>
+              <strong>7+</strong>
+              <span class="meta">Years in automation engineering</span>
             </div>
             <div class="stat">
-              <strong>5+</strong>
-              <span class="meta">Major automation initiatives</span>
+              <strong>AI</strong>
+              <span class="meta">Driven automation and GenAI solutions</span>
             </div>
             <div class="stat">
-              <strong>Enterprise</strong>
-              <span class="meta">QA & release support</span>
+              <strong>Scale</strong>
+              <span class="meta">Enterprise frameworks and execution</span>
             </div>
           </div>
         </aside>
