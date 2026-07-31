@@ -2,102 +2,302 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Veronica Andrew Gonsalves | Automation Engineer Portfolio</title>
-  <meta name="description" content="Automation Engineer portfolio of Veronica Andrew Gonsalves" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Veronica Gonsalves — SDET & Automation Engineer</title>
+  <meta name="description" content="Portfolio of Veronica Gonsalves — SDET at Visa with expertise in test automation, framework development, Docker, Playwright, Sauce Labs, and GenAI-driven solutions." />
+  <link rel="icon" href="data:,">
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #8b5cf6;
+    :root{
+      --bg:#0f172a;
+      --bg2:#111827;
+      --panel:#0b1220;
+      --text:#e5eefc;
+      --muted:#9fb2d0;
+      --brand:#7c3aed;
+      --brand2:#06b6d4;
+      --card:rgba(255,255,255,.05);
+      --stroke:rgba(255,255,255,.09);
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:22px;
+      --max:1120px;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 24px;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124,58,237,.28), transparent 30%),
+        radial-gradient(circle at top right, rgba(6,182,212,.22), transparent 28%),
+        linear-gradient(180deg, #0b1020 0%, var(--bg) 100%);
+      min-height:100vh;
+      line-height:1.6;
     }
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--card);
-      border: 1px solid #1f2937;
-      border-radius: 14px;
-      padding: 28px;
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(16px);
+      background: rgba(10,15,30,.6);
+      border:1px solid var(--stroke);
+      border-radius:999px;
+      padding:12px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      box-shadow: var(--shadow);
+      margin-bottom:28px;
     }
-    h1, h2 { line-height: 1.3; margin-top: 0; }
-    h2 { margin-top: 28px; color: #f3f4f6; }
-    p, li { color: var(--text); }
-    .muted { color: var(--muted); }
-    .badges img, .stats img {
-      margin: 0 8px 8px 0;
-      vertical-align: middle;
-      max-width: 100%;
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px
     }
-    a { color: #93c5fd; }
-    hr {
-      border: 0;
-      border-top: 1px solid #374151;
-      margin: 28px 0;
+    .logo{
+      width:40px;height:40px;border-radius:12px;
+      display:grid;place-items:center;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 25px rgba(124,58,237,.35);
+    }
+    .navlinks{display:flex;gap:16px;flex-wrap:wrap; color:var(--muted); font-size:.95rem}
+    .navlinks a:hover{color:var(--text)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.25fr .95fr;
+      gap:28px;
+      align-items:center;
+      padding:34px 0 20px;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      color:#c9d7ee;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--stroke);
+      padding:8px 14px;border-radius:999px;
+      font-size:.9rem
+    }
+    .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 18px #22c55e}
+    h1{
+      font-size:clamp(2.6rem, 6vw, 5rem);
+      line-height:1.03;
+      margin:.55rem 0 1rem;
+      letter-spacing:-.04em;
+    }
+    .lead{font-size:1.08rem; color:var(--muted); max-width:60ch}
+    .cta{display:flex; gap:14px; margin-top:24px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:13px 18px; border-radius:14px; font-weight:700;
+      border:1px solid transparent;
+      transition:.2s transform, .2s background, .2s border;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      background:linear-gradient(135deg, var(--brand), #4f46e5);
+      box-shadow:0 16px 30px rgba(124,58,237,.25)
+    }
+    .btn.ghost{border-color:var(--stroke); background:rgba(255,255,255,.04)}
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-card{padding:22px}
+    .avatar{
+      width:84px;height:84px;border-radius:22px;
+      background:linear-gradient(135deg, rgba(124,58,237,.9), rgba(6,182,212,.8));
+      display:grid;place-items:center; font-size:1.7rem; font-weight:900;
+      margin-bottom:16px;
+    }
+    .meta{color:var(--muted)}
+    .stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px
+    }
+    .stat{padding:14px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid var(--stroke)}
+    .stat strong{display:block;font-size:1.3rem}
+    section{padding:26px 0}
+    h2{
+      font-size:1.5rem;
+      margin:0 0 16px;
+      letter-spacing:-.02em
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px
+    }
+    .project{
+      padding:20px;
+      min-height:210px
+    }
+    .project h3{margin:0 0 10px; font-size:1.15rem}
+    .project p{margin:0 0 14px; color:var(--muted)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{
+      font-size:.8rem; color:#dbe7fb;
+      background:rgba(255,255,255,.07);
+      border:1px solid var(--stroke);
+      padding:6px 10px; border-radius:999px
+    }
+    .timeline{
+      display:grid; gap:14px
+    }
+    .item{
+      padding:18px 20px
+    }
+    .item h3{margin:0 0 6px}
+    .item .sub{color:var(--muted); font-size:.95rem; margin-bottom:8px}
+    .contact{
+      display:grid; grid-template-columns:1fr 1fr; gap:16px
+    }
+    .card{padding:20px}
+    footer{
+      color:var(--muted);
+      text-align:center;
+      padding:22px 0 34px
+    }
+
+    .reveal{opacity:0; transform:translateY(16px); animation:rise .9s ease forwards}
+    @keyframes rise{to{opacity:1; transform:none}}
+
+    @media (max-width: 920px){
+      .hero, .grid, .contact{grid-template-columns:1fr}
+      .nav{border-radius:22px}
+      .stats{grid-template-columns:1fr 1fr 1fr}
+    }
+    @media (max-width: 560px){
+      .wrap{padding:16px}
+      .stats{grid-template-columns:1fr}
+      h1{font-size:2.3rem}
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Hi, I'm Veronica — Automation Engineer with 7 years of experience.</h1>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="#home" aria-label="Homepage">
+        <div class="logo" aria-hidden>VG</div>
+        <div>
+          <div style="font-weight:800">Veronica Gonsalves</div>
+          <div style="font-size:0.85rem;color:var(--muted)">SDET at Visa • Test Automation • Framework Development</div>
+        </div>
+      </a>
+      <nav class="navlinks">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-    <p class="badges">
-      <img src="https://img.shields.io/badge/Role-Automation%20Engineer-blueviolet" alt="Role Automation Engineer" />
-      <img src="https://img.shields.io/badge/Experience-7%20Years-success" alt="Experience 7 Years" />
-      <img src="https://img.shields.io/badge/Focus-Test%20Automation-informational" alt="Focus Test Automation" />
-      <img src="https://img.shields.io/badge/AI-Driven%20Quality-orange" alt="AI Driven Quality" />
-    </p>
+    <main id="home">
+      <section class="hero">
+        <div class="hero-left">
+          <div class="reveal" style="transition-delay:.05s">
+            <div class="eyebrow"><span class="dot"></span> Available for impactful quality engineering work</div>
+            <h1>Hi, I'm Veronica — an SDET at Visa focused on automation, frameworks, and quality engineering.</h1>
+            <p class="lead">Over the past two years, I have built scalable automation solutions for enterprise applications, including Sauce Labs integration, Playwright with Python, Dockerized execution, Sentinel Grid monitoring, and GenAI-enabled workflow automation.</p>
+            <div class="cta">
+              <a class="btn primary" href="#projects">See my work</a>
+              <a class="btn ghost" href="#contact">Get in touch</a>
+            </div>
+          </div>
+        </div>
 
-    <p>
-      I am well-versed in building automation frameworks from scratch, with strong
-      expertise in Playwright with Python, Docker image creation, and hosting
-      frameworks on Sentinel Grid.
-    </p>
+        <aside class="panel hero-card reveal" style="transition-delay:.12s">
+          <div class="avatar">VG</div>
+          <div>
+            <h3>Veronica Gonsalves</h3>
+            <div class="meta">SDET • Visa • Playwright • Selenium • Docker • GenAI</div>
+          </div>
 
-    <h2>🚀 Selected Projects</h2>
-    <ul>
-      <li>Developed automation frameworks from scratch to support scalable QA coverage.</li>
-      <li>Built and deployed Playwright + Python frameworks with Docker on Sentinel Grid.</li>
-      <li>Integrated Sauce Labs with Jenkins, expanded API automation, and applied GenAI-assisted test use cases.</li>
-  <li>Leveraged Generative AI and MCP (Model Context Protocol) servers to build an automated test-case generation solution that analyzes assigned Jira stories and creates relevant test scenarios, significantly reducing manual test design effort.</li>
-  <li>Designed and implemented an AI-powered framework that extracts functional requirements from Jira user stories and generates Playwright automation tests, accelerating onboarding and improving coverage.</li>
-  <li>Integrated the automation framework with Jira MCP services for intelligent defect management by auto-creating bugs for newly identified issues, correlating failures with existing Jira defects, and validating open issue history to prevent duplicates.</li>
-  <li>Developed self-service workflow automations using AI agents and Jira integrations, streamlining defect triage, reporting, and test artifact generation while improving traceability across requirements, test cases, and defects.</li>
-  <li>Built POCs using AI, MCP servers, and automation frameworks to improve productivity, reduce manual intervention, and increase end-to-end testing efficiency.</li>
-  <li>Presented AI-driven automation solutions, framework enhancements, and POCs to business stakeholders, product owners, and leadership, demonstrating measurable quality engineering outcomes.</li>
-</ul>
-    </ul>
+          <div class="stats">
+            <div class="stat">
+              <strong>2+</strong>
+              <span class="meta">Years focused on quality engineering</span>
+            </div>
+            <div class="stat">
+              <strong>5+</strong>
+              <span class="meta">Major automation initiatives</span>
+            </div>
+            <div class="stat">
+              <strong>Enterprise</strong>
+              <span class="meta">QA & release support</span>
+            </div>
+          </div>
+        </aside>
+      </section>
 
-    <h2>🧰 About</h2>
-    <p>
-      My automation journey started with a strong Java-first testing background and evolved into modern
-      Python-based test frameworks, cloud execution, and CI/CD aligned quality engineering.
-      I also track onboarding and productivity through Jira MCP automation contexts.
-    </p>
+      <section id="projects" class="reveal" style="transition-delay:.18s">
+        <h2>Experience highlights</h2>
+        <div class="grid">
+          <article class="project panel">
+            <h3>Sauce Labs Integration</h3>
+            <p>Led the integration of Sauce Labs into an existing Selenium BDD framework to enable cloud execution, parallel runs, reporting, and faster test cycles.</p>
+            <div class="tags"><span class="tag">Sauce Labs</span><span class="tag">Selenium BDD</span><span class="tag">Parallel Execution</span></div>
+          </article>
 
-    <h2>📈 GitHub Stats</h2>
-    <p class="stats">
-      <img src="https://github-readme-stats.vercel.app/api?username=VeronicaGonsalves96&amp;show_icons=true&amp;theme=tokyonight" alt="GitHub Stats" />
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=VeronicaGonsalves96&amp;layout=compact&amp;theme=tokyonight" alt="Top Languages" />
-    </p>
+          <article class="project panel">
+            <h3>Playwright Framework from Scratch</h3>
+            <p>Built a Python-based Playwright automation framework with POM, reusable utilities, reporting, test data handling, and scalable architecture.</p>
+            <div class="tags"><span class="tag">Playwright</span><span class="tag">Python</span><span class="tag">POM</span></div>
+          </article>
 
-    <h2>📬 Contact</h2>
-    <div>Email: <a href="mailto:veronicagonsalves96@gmail.com">veronicagonsalves96@gmail.com</a></div>
-    <div>GitHub: <a href="https://github.com/VeronicaGonsalves96">@VeronicaGonsalves96</a></div>
+          <article class="project panel">
+            <h3>Dockerized Execution and Sentinel Grid</h3>
+            <p>Created and maintained Docker images for consistent execution across local, QA, and CI/CD environments while improving monitoring through Sentinel Grid.</p>
+            <div class="tags"><span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">Monitoring</span></div>
+          </article>
 
-    <hr />
+          <article class="project panel">
+            <h3>GenAI and Automation Agents</h3>
+            <p>Explored GenAI-driven solutions for business workflows, including CAPTCHA-reading automation and agent-based integrations using modern AI frameworks and MCP.</p>
+            <div class="tags"><span class="tag">GenAI</span><span class="tag">MCP</span><span class="tag">Automation Agents</span></div>
+          </article>
 
-    <p class="muted">✨ <em>Passionate about building smarter, faster, and more reliable software quality solutions through automation + AI.</em></p>
-  </main>
+          <article class="project panel">
+            <h3>JIRA Onboarding and Access Management</h3>
+            <p>Automated user onboarding, password reset, reporting, and workflow management to reduce manual effort and improve operational efficiency.</p>
+            <div class="tags"><span class="tag">JIRA</span><span class="tag">Workflow Automation</span><span class="tag">Reporting</span></div>
+          </article>
+
+          <article class="project panel">
+            <h3>IAM and Security Collaboration</h3>
+            <p>Supported identity and access management initiatives by collaborating on secure access provisioning, compliance readiness, audit support, and process governance.</p>
+            <div class="tags"><span class="tag">IAM</span><span class="tag">Security</span><span class="tag">Compliance</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="reveal" style="transition-delay:.22s">
+        <h2>About</h2>
+        <div style="color:var(--muted);max-width:70ch">
+          I am an SDET at Visa with two years of experience focused on test automation, framework development, and quality engineering for enterprise applications. My work spans Selenium BDD and Sauce Labs integration, Playwright framework development in Python, Docker-based execution, Sentinel Grid monitoring, GenAI automation use cases, and JIRA-driven onboarding and access management. I regularly collaborate with developers, product owners, security teams, and QA stakeholders to support requirements, release validation, and production readiness.
+        </div>
+      </section>
+
+      <section id="contact" class="reveal" style="transition-delay:.26s">
+        <h2>Contact</h2>
+        <div class="contact">
+          <div class="card panel">
+            <h3>Let’s connect</h3>
+            <p style="color:var(--muted);margin-top:8px">
+              I’m always happy to discuss automation, framework design, quality engineering, and AI-driven workflow solutions.
+            </p>
+          </div>
+
+          <aside class="card panel" style="min-height:160px">
+            <h3>Where to find me</h3>
+            <div style="color:var(--muted);margin-top:8px">
+              <div>Email: veronicagonsalves96@gmail.com</div>
+              <div style="margin-top:8px">GitHub: github.com/VeronicaGonsalves96</div>
+              <div style="margin-top:8px">LinkedIn:https://www.linkedin.com/in/veronica-gonsalves-742a251ba/</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Veronica Gonsalves
+    </footer>
+  </div>
 </body>
 </html>
