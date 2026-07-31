@@ -2,345 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Veronica Gonsalves — Automation Engineer Portfolio</title>
-  <meta name="description" content="Portfolio of Veronica Gonsalves — Automation Engineer with 7 years of experience" />
-  <link rel="icon" href="data:,">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veronica Andrew Gonsalves | Portfolio</title>
+  <meta name="description" content="SDET portfolio of Veronica Andrew Gonsalves" />
   <style>
-    :root{
-      --bg1:#0f172a;
-      --bg2:#0b2447;
-      --accent:#7c5cff;
-      --muted:rgba(255,255,255,0.8);
-      --glass: rgba(255,255,255,0.06);
-      --card: rgba(255,255,255,0.04);
-      --radius:14px;
-      --maxw:1100px;
-      --ease: cubic-bezier(.2,.9,.3,1);
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #8b5cf6;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:#fff;
-      background: radial-gradient(1200px 500px at 10% 10%, rgba(124,92,255,0.18), transparent 7%),
-                  linear-gradient(180deg,var(--bg1),var(--bg2));
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      padding:32px;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
     }
-    .site {
-      max-width: var(--maxw);
+    main {
+      max-width: 900px;
       margin: 0 auto;
+      background: var(--card);
+      border: 1px solid #1f2937;
+      border-radius: 14px;
+      padding: 28px;
     }
-
-    /* Header / Nav */
-    header {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:28px;
+    h1, h2 { line-height: 1.3; margin-top: 0; }
+    h2 { margin-top: 28px; color: #f3f4f6; }
+    p, li { color: var(--text); }
+    .muted { color: var(--muted); }
+    .badges img, .stats img {
+      margin: 0 8px 8px 0;
+      vertical-align: middle;
+      max-width: 100%;
     }
-    .brand {
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:inherit;
+    a { color: #93c5fd; }
+    hr {
+      border: 0;
+      border-top: 1px solid #374151;
+      margin: 28px 0;
     }
-    .logo {
-      width:48px;height:48px;border-radius:12px;
-      background: linear-gradient(135deg,var(--accent),#ff7ab6);
-      display:grid;place-items:center;font-weight:700;
-      box-shadow: 0 6px 18px rgba(124,92,255,0.18);
-      transform:translateZ(0);
-    }
-    nav {
-      display:flex;
-      gap:18px;
-      align-items:center;
-    }
-    nav a {
-      color:var(--muted);
-      text-decoration:none;
-      padding:8px 10px;border-radius:8px;
-      font-weight:600;font-size:0.95rem;
-    }
-    nav a:hover{color:white;background:var(--glass)}
-
-    /* Mobile */
-    .menu-toggle{display:none}
-    @media (max-width:820px){
-      nav{display:none}
-      .menu-toggle{display:inline-flex;gap:8px;align-items:center}
-    }
-
-    /* Hero */
-    .hero {
-      display:grid;
-      grid-template-columns: 1fr 360px;
-      gap:32px;
-      align-items:center;
-      margin-bottom:48px;
-    }
-    .hero-left h1{
-      font-size: clamp(2rem, 6vw, 3rem);
-      margin:0 0 6px 0;
-      letter-spacing:-0.02em;
-    }
-    .lead{
-      color:var(--muted);
-      font-size:1.05rem;
-      margin-bottom:18px;
-    }
-    .cta {
-      display:flex;gap:12px;flex-wrap:wrap;
-    }
-    .btn {
-      background: linear-gradient(90deg,var(--accent),#ff7ab6);
-      color:white;padding:10px 16px;border-radius:10px;border:0;
-      font-weight:700;cursor:pointer;box-shadow: 0 8px 30px rgba(124,92,255,0.18);
-      transition: transform .22s var(--ease), box-shadow .22s var(--ease);
-    }
-    .btn:active{transform:translateY(1px)}
-    .btn.ghost{
-      background:transparent;border:1px solid rgba(255,255,255,0.08);
-      box-shadow:none;color:var(--muted);font-weight:600;
-    }
-
-    /* Profile card */
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-    .profile {
-      display:flex;gap:16px;align-items:center;
-    }
-    .avatar {
-      width:88px;height:88px;border-radius:16px;background:linear-gradient(135deg,#fff2, #fff0);
-      display:grid;place-items:center;font-weight:700;color:#fff;
-      font-size:1.6rem;
-      border:1px solid rgba(255,255,255,0.04);
-    }
-    .profile h3{margin:0 0 4px 0}
-    .meta{color:var(--muted);font-size:0.95rem}
-
-    /* Sections */
-    section{margin-bottom:48px}
-    h2{font-size:1.25rem;margin:0 0 14px 0}
-    .grid {
-      display:grid;gap:16px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .project {
-      background:var(--card);padding:16px;border-radius:12px;
-      border:1px solid rgba(255,255,255,0.03);
-      transition: transform .28s var(--ease), box-shadow .28s var(--ease);
-    }
-    .project:hover{
-      transform:translateY(-6px);
-      box-shadow: 0 20px 40px rgba(2,6,23,0.6);
-    }
-    .project h3{margin:0 0 8px 0}
-    .project p{color:var(--muted);font-size:0.95rem;margin:0 0 12px 0}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:0.8rem;color:var(--muted)}
-
-    /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
-    .field{display:flex;flex-direction:column;gap:6px}
-    input,textarea{
-      background:transparent;border:1px solid rgba(255,255,255,0.06);
-      padding:10px 12px;border-radius:10px;color:white;
-      min-height:44px;font-size:0.95rem;
-    }
-
-    /* Footer */
-    footer{color:var(--muted);text-align:center;padding:24px 0 10px}
-
-    /* Responsive adjustments */
-    @media (max-width:1100px){
-      .hero{grid-template-columns:1fr 320px}
-      .grid{grid-template-columns: repeat(2, 1fr)}
-    }
-    @media (max-width:820px){
-      body{padding:20px}
-      .hero{grid-template-columns:1fr;gap:18px}
-      .contact-grid{grid-template-columns:1fr}
-      .grid{grid-template-columns: 1fr}
-      .profile{justify-content:space-between}
-      header{align-items:flex-start;flex-direction:column;gap:10px}
-    }
-
-    /* small reveal animation */
-    .reveal {opacity:0; transform: translateY(10px); transition: opacity .6s var(--ease), transform .6s var(--ease)}
-    .reveal.show{opacity:1; transform: translateY(0)}
   </style>
 </head>
 <body>
-  <div class="site">
-    <header>
-      <a class="brand" href="#">
-        <div class="logo" aria-hidden>VG</div>
-        <div>
-          <div style="font-weight:800">Veronica Gonsalves</div>
-          <div style="font-size:0.85rem;color:var(--muted)">Automation Engineer • 7+ Years</div>
-        </div>
-      </a>
+  <main>
+    <h1>Hi, I'm Veronica Andrew Gonsalves 👋</h1>
 
-      <div style="display:flex;gap:12px;align-items:center">
-        <nav aria-label="Main Navigation">
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
+    <p class="badges">
+      <img src="https://img.shields.io/badge/Role-SDET-blueviolet" alt="Role SDET" />
+      <img src="https://img.shields.io/badge/Experience-7%2B%20Years-success" alt="Experience 7+ Years" />
+      <img src="https://img.shields.io/badge/Focus-Test%20Automation-informational" alt="Focus Test Automation" />
+      <img src="https://img.shields.io/badge/AI-Driven%20Quality-orange" alt="AI Driven Quality" />
+    </p>
 
-        <button class="menu-toggle btn ghost" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" style="display:none">
-          Menu
-        </button>
-      </div>
-    </header>
+    <p>
+      Software Development Engineer in Test (SDET) with 7+ years of experience in
+      <strong>test automation, API testing, and quality engineering</strong> across fintech, payments,
+      real estate, and cybersecurity domains.
+      I focus on building scalable automation solutions and leveraging AI to accelerate software quality.
+    </p>
 
-    <main>
-      <section class="hero">
-        <div class="hero-left">
-          <div class="reveal" style="transition-delay:.05s">
-            <h1>Hi, I'm Veronica — Automation Engineer with 7 years of experience.</h1>
-            <p class="lead">I am well-versed in building automation frameworks from scratch, with strong expertise in Playwright with Python, Docker image creation, and hosting frameworks on Selenium Grid.</p>
-            <div class="cta">
-              <a class="btn" href="#projects">See my work</a>
-              <a class="btn ghost" href="#contact">Get in touch</a>
-            </div>
-          </div>
-        </div>
+    <h2>🚀 Professional Snapshot</h2>
+    <ul>
+      <li>Built a <strong>Playwright + Python</strong> automation framework from scratch at Visa</li>
+      <li>Led <strong>Sauce Labs + Selenium BDD</strong> integration for cloud-scale parallel execution</li>
+      <li>Containerized test execution using <strong>Docker</strong> for reliable, consistent environments</li>
+      <li>Developed <strong>AI-powered Jira workflows</strong> for test case generation and defect automation</li>
+      <li>Contributed to <strong>IAM and cybersecurity testing</strong> initiatives</li>
+    </ul>
 
-        <aside class="card reveal" style="transition-delay:.12s">
-          <div class="profile">
-            <div class="avatar">VG</div>
-            <div>
-              <h3>Veronica Gonsalves</h3>
-              <div class="meta">Automation Engineer • Java • Playwright • API Automation</div>
-            </div>
-          </div>
+    <h2>🧰 Tech Stack</h2>
+    <p><strong>Automation &amp; Testing:</strong> Playwright (Python), Selenium, Cucumber BDD, Rest Assured, API Testing, TestNG, Postman, Sauce Labs</p>
+    <p><strong>Languages:</strong> Java, Python, JavaScript</p>
+    <p><strong>DevOps &amp; Cloud:</strong> Docker, Jenkins, AWS, Kubernetes, CI/CD</p>
+    <p><strong>Monitoring &amp; Security:</strong> Microsoft Sentinel, Kibana, IAM, Cybersecurity Testing</p>
+    <p><strong>AI &amp; Productivity:</strong> Generative AI, MCP Servers, Jira Automation Agents</p>
 
-          <div style="margin-top:14px;font-size:0.95rem;color:var(--muted)">
-            <strong>Availability:</strong> Open for Automation and QA Engineering opportunities.
-          </div>
+    <h2>🏆 Achievements</h2>
+    <ul>
+      <li>Scaled enterprise automation solutions for quality and release confidence</li>
+      <li>Delivered AI-driven automation improvements for faster defect triage</li>
+      <li>Recognized with <strong>MasterMind</strong>, <strong>Problem Solver</strong>, and <strong>Strategic Thinking</strong> awards</li>
+    </ul>
 
-          <div style="display:flex;gap:8px;margin-top:14px">
-            <a class="btn" href="#contact" style="flex:1">Contact</a>
-            <a class="btn ghost" href="https://github.com/VeronicaGonsalves96" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </aside>
-      </section>
+    <h2>📜 Certifications</h2>
+    <ul>
+      <li>Rest Assured Certification</li>
+      <li>Selenium BDD Certification</li>
+      <li>MuleSoft Anypoint Platform Fundamentals</li>
+      <li>Introduction to SQL (University of Michigan)</li>
+    </ul>
 
-      <section id="projects" class="reveal" style="transition-delay:.18s">
-        <h2>Selected projects</h2>
-        <div class="grid">
-          <article class="project">
-            <h3>Automation Framework from Scratch</h3>
-            <p>Designed and implemented a scalable test automation framework from scratch for UI and API test coverage.</p>
-            <div class="tags"><span class="tag">Java</span><span class="tag">Framework Design</span></div>
-          </article>
+    <h2>📈 GitHub Stats</h2>
+    <p class="stats">
+      <img src="https://github-readme-stats.vercel.app/api?username=VeronicaGonsalves96&amp;show_icons=true&amp;theme=tokyonight" alt="GitHub Stats" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=VeronicaGonsalves96&amp;layout=compact&amp;theme=tokyonight" alt="Top Languages" />
+    </p>
 
-          <article class="project">
-            <h3>Playwright + Python on Selenium Grid</h3>
-            <p>Built Playwright with Python automation, containerized it with Docker, and hosted execution on Selenium Grid.</p>
-            <div class="tags"><span class="tag">Playwright</span><span class="tag">Python</span><span class="tag">Docker</span></div>
-          </article>
+    <h2>🤝 Connect</h2>
+    <ul>
+      <li>GitHub: <a href="https://github.com/VeronicaGonsalves96">@VeronicaGonsalves96</a></li>
+      <li>LinkedIn: <a href="#" aria-label="LinkedIn profile">Veronica Andrew Gonsalves</a></li>
+    </ul>
 
-          <article class="project">
-            <h3>CI/CD, API and GenAI Automation</h3>
-            <p>Integrated Sauce Labs with Jenkins, automated API use cases, and used GenAI APIs for scenarios like CAPTCHA handling.</p>
-            <div class="tags"><span class="tag">Sauce Labs</span><span class="tag">Jenkins</span><span class="tag">API Testing</span></div>
-          </article>
-        </div>
-      </section>
+    <hr />
 
-      <section id="about" class="reveal" style="transition-delay:.22s">
-        <h2>About</h2>
-        <div style="color:var(--muted);max-width:70ch">
-          I have extensive experience in automation engineering, with Java as my primary language and strong API automation expertise. I also built an agent using Jira MCP server capabilities to generate onboarding tracking reports, and implemented user creation and reset concepts for streamlined workflows.
-        </div>
-      </section>
-
-      <section id="contact" class="reveal" style="transition-delay:.26s">
-        <h2>Contact</h2>
-        <div class="contact-grid">
-          <form id="contactForm" style="display:grid;gap:12px">
-            <div class="field">
-              <label class="meta">Your name</label>
-              <input name="name" placeholder="Your name">
-            </div>
-            <div class="field">
-              <label class="meta">Your email</label>
-              <input name="email" placeholder="you@domain.com" type="email">
-            </div>
-            <div class="field">
-              <label class="meta">Message</label>
-              <textarea name="message" rows="6" placeholder="Say hi — let's work together!"></textarea>
-            </div>
-            <div style="display:flex;gap:10px">
-              <button class="btn" type="submit">Send message</button>
-              <a class="btn ghost" href="mailto:veronicagonsalves96@gmail.com">Email</a>
-            </div>
-            <div id="formResult" style="color:var(--muted);font-size:0.95rem;margin-top:6px"></div>
-          </form>
-
-          <aside class="card" style="min-height:160px">
-            <h3>Where to find me</h3>
-            <div style="color:var(--muted);margin-top:8px">
-              <div>Mobile: +91 9632524684</div>
-              <div style="margin-top:8px">Email: veronicagonsalves96@gmail.com</div>
-              <div style="margin-top:8px">GitHub: github.com/VeronicaGonsalves96</div>
-            </div>
-          </aside>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      © <span id="year"></span> Veronica Gonsalves • Built with HTML & CSS
-    </footer>
-  </div>
-
-  <script>
-    // small script: smooth reveal on scroll and basic contact behavior
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    function revealOnScroll(){
-      document.querySelectorAll('.reveal').forEach(el=>{
-        const r = el.getBoundingClientRect();
-        if(r.top < (window.innerHeight - 60)){
-          el.classList.add('show');
-        }
-      });
-    }
-    window.addEventListener('scroll', revealOnScroll, {passive:true});
-    window.addEventListener('load', ()=>{ revealOnScroll(); });
-
-    // smooth anchor scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const target = document.querySelector(a.getAttribute('href'));
-        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
-      });
-    });
-
-    // fake form submit (replace with real endpoint or Netlify forms)
-    const form = document.getElementById('contactForm');
-    const result = document.getElementById('formResult');
-    form.addEventListener('submit', e=>{
-      e.preventDefault();
-      result.textContent = "Thanks — your message has been sent (demo).";
-      form.reset();
-    });
-  </script>
+    <p class="muted">✨ <em>Passionate about building smarter, faster, and more reliable software quality solutions through automation + AI.</em></p>
+  </main>
 </body>
 </html>
